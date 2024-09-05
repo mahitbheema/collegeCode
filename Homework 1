@@ -1,0 +1,55 @@
+*****+-***-**-*-**-*-*-*-*-----**--*-***-***----***************************
+*
+*  Homework #: hw01
+*
+*  Academic Integrity Statement:
+*
+*  I have not used source code obtained from any other unauthorized source, 
+*  either modified or unmodified.  Neither have I provided access to my code 
+*  to another. The effort I am submitting is my own original work.
+*
+*  Program Description: Determines the average mass per atom given the number of atoms present in a sample of one isotope and average 
+*                       mass unit
+*
+******+-***-**-*-**-*-*-*-*-----**--*-***-***----**************************/
+#include <stdio.h>
+#define ATOMS 100
+
+int main(void)
+{
+  //variables
+  float Iso1; //atoms for isotope 1
+  float Mass1; //mass value for isotope 1
+  float Mass2; //mass value for isotope 2
+  float calcRel; //calculate the relative atoms that remain in the isotope
+  float calcMass; //calculate the average mass per atom in the sample
+
+  //print statements
+  printf("Enter relative number of atoms for isotope #1 -> ");
+  scanf("%f", &Iso1);
+  printf("Enter mass value for isotope #1 -> ");
+  scanf("%f", &Mass1);
+  printf("Enter mass value for isotope #2 -> ");
+  scanf("%f", &Mass2);
+  printf("\n");
+  printf("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+  printf("\n");
+
+  //logic
+  calcRel = ATOMS - Iso1;
+
+  //print statements
+  printf("Relative number of atoms isotope #1: %8.2f\n", Iso1);
+  printf("Relative number of atoms isotope #2: %8.2f\n", calcRel);
+  printf("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n");
+  printf("Given mass value of isotope #1: %-7.2f units\n", Mass1);
+  printf("Given mass value of isotope #2: %-7.2f units\n", Mass2);
+  printf("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n");
+  //logic
+  calcMass = ((Iso1 * Mass1) + (calcRel * Mass2)) / ATOMS;
+
+  //print statement
+  printf("Average mass per atom in sample: %12.2f\n", calcMass);
+  printf("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+  return 0;
+}
